@@ -11,4 +11,4 @@
     mode: 0644
     backup: yes
   notify:
-   - restart web
+   - restart webserver
