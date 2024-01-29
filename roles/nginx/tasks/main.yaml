@@ -1,0 +1,20 @@
+---
+- name: Install Web Service
+  hosts: nodes
+  become: yes
+  gather_facts: yes
+  vars:
+    nu: "{{ groups.nodes | count }}"
+    idx: "{{ groups.nodes.index(inventory_hostname)+1 | int }}"
+    lnx_name: "{{ 'CentOS' if ansible_distribution == 'CentOS'
+                   else 'Ubuntu' if ansible_distribution == 'Ubuntu'
+                   else 'ETC' }}"
+  tasks:
+    - name: OS에 따른 배포판과 작업파일 선택
+      include_tasks: "{{ lnx_name }}.yaml"
+
+  handlers:
+    - name: restart web
+      service:
+        name: nginx
+        state: restarted
