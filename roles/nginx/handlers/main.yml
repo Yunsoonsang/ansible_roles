@@ -1,5 +1,5 @@
 ---
-- name: 웹서버 재시작 
+- name: restart webserver 
   service:
     name: nginx
     state: restarted
