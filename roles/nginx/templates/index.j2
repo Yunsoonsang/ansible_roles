@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<!Create by ansible template at {{ ansible_date_time.iso8601 }}>
 <html>
 <head>
-	<title>test</title>
+        <title>ansible-roles test</title>
 </head>
 <body>
-	<p>  WELCOME </p>
-	<p> {{idx}}/{{nu}}</p>
-	<p> dist: {{ ansible_distribution }} </p>
+        <p><center> 윤순상 </center></p>
+        <p><center> NGINX NUMBER : {{idx}}/{{nu}} </center></p>
+        <p><center> dist: {{ ansible_distribution }} </center></p>
+        <p><center> pub: {{ ansible_default_ipv4.address }} </center></p>
+        <p><center> pri: {{ ansible_eth1.ipv4.address }} </center></p>
 </body>
 </html>
