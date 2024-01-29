@@ -1,3 +1,6 @@
 ---
   - name: Linux Installation by distribution
     include_tasks: "{{ lnx_name }}.yaml"
+
+  - name: nginx 구성하기
+    include_tasks: config.yml
