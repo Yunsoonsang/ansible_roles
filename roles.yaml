@@ -1,6 +1,6 @@
 ---
 - name: 각 노드에 nginx 배포하기
   hosts: nodes
-  become: yes
+  become: true
   roles:
-    - role: ./roles/nginx
+    - role: roles/nginx
